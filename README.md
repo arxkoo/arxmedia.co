@@ -58,5 +58,5 @@ Then visit http://localhost:8000.
 
 - Fonts (Chakra Petch, Noto Sans SC, Cinzel, Poppins) load from Google Fonts.
 - The ISEKAI ZERO video section loads thumbnails and the player from YouTube.
-- The contact form has no server behind it. GitHub Pages can't run server code, so to receive messages connect the form to a form service (for example Formspree or Getform) by setting its `action` URL.
+- **Enquiry forms** (the "Contact us" section on every page, plus the Contact page): out of the box, pressing *Send message* checks the required fields, then opens the visitor's email app with the message already written out to admin@arxmedia.co. To have messages delivered silently straight to your inbox, create a free form at a form service such as Formspree, copy its URL and paste it into `FORM_ENDPOINT` near the top of the forms section in `js/site.js`. Change `FORM_EMAIL` there to use a different inbox.
 - Animations respect the visitor's "reduce motion" setting.

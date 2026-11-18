@@ -113,6 +113,40 @@
     });
   }
 
+  /* ---------- Contact / enquiry forms ----------
+     FORM_ENDPOINT: paste a form-service URL here (for example
+     'https://formspree.io/f/abcdwxyz') and applications are sent
+     straight to your inbox. Left empty, the form opens the visitor's
+     email app with the message filled in, addressed to FORM_EMAIL. */
+  var FORM_ENDPOINT = '';
+  var FORM_EMAIL = 'admin@arxmedia.co';
+  document.querySelectorAll('[data-arx-form]').forEach(function (form) {
+    var status = form.querySelector('.arx-form-status');
+    var btn = form.querySelector('button[type="submit"]');
+    function say(msg, ok) { if (status) { status.textContent = msg; status.style.color = ok === false ? '#FF8A80' : (ok ? '#FAFAFA' : '#A3A3A3'); } }
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.reportValidity()) { say('Please fill in the highlighted fields.', false); return; }
+      var d = new FormData(form);
+      if (d.get('_gotcha')) return; // spam trap
+      var name = d.get('name'), topic = d.get('topic');
+      var subject = 'Website enquiry: ' + topic + ' - ' + name;
+      if (FORM_ENDPOINT) {
+        d.append('_subject', subject);
+        d.append('page', location.pathname);
+        btn.disabled = true; say('Sending...');
+        fetch(FORM_ENDPOINT, { method: 'POST', body: d, headers: { Accept: 'application/json' } })
+          .then(function (r) { if (!r.ok) throw new Error(r.status); form.reset(); say('Thank you, ' + name + '! Your message is on its way. We will be in touch soon.', true); })
+          .catch(function () { say('Sorry, that did not go through. Please email ' + FORM_EMAIL + ' instead.', false); })
+          .then(function () { btn.disabled = false; });
+      } else {
+        var body = ['Name: ' + name, 'Email: ' + d.get('email'), 'Phone: ' + (d.get('phone') || '-'), 'Company: ' + (d.get('company') || '-'), 'Topic: ' + topic, '', d.get('message')].join('\n');
+        location.href = 'mailto:' + FORM_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        say('Your email app should open with your message ready. Just press send.', true);
+      }
+    });
+  });
+
   /* ---------- YouTube player (ISEKAI ZERO page) ---------- */
   var player = document.querySelector('[data-yt-player]');
   if (player) {
