@@ -1,0 +1,47 @@
+.iz{--mid:#0B0333;--vio:#1A0D6B;--gold:#FFC107;--amb:#FF8A00;--ivory:#FFF7E6;--teal:#0E4E6A;background:#0B0333;color:#FFF7E6;font-family:Poppins,system-ui,sans-serif}
+.iz-cin{font-family:Cinzel,Georgia,serif}
+.iz-gold{background:linear-gradient(180deg,#FFE08A 0%,#FFC107 45%,#FF8A00 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.iz-btn{transition:transform .25s,box-shadow .25s,background .25s,border-color .25s}
+.iz-btn:hover{transform:translateY(-2px);box-shadow:0 10px 40px rgba(255,170,0,.35)}
+.iz-ghost:hover{background:rgba(255,193,7,.08)!important;border-color:#FFC107!important}
+.iz-hero-media.arx-px{position:absolute}
+.iz-vid{transition:background .25s,border-color .25s,transform .25s}
+.iz-vid:hover{border-color:rgba(255,193,7,.6)!important;transform:translateX(4px)}
+.iz-vid img,.iz-feat img{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.iz-vid:hover img,.iz-feat:hover img{transform:scale(1.06)}
+.iz-play{transition:transform .3s}
+.iz-feat:hover .iz-play{transform:scale(1.1)}
+.iz-yt:hover{background:#E6002E!important}
+.iz-card{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s}
+.iz-card:hover{transform:translateY(-6px);border-color:rgba(255,193,7,.7)!important;box-shadow:0 18px 60px rgba(255,138,0,.22),0 0 0 1px rgba(255,193,7,.25) inset}
+.iz-story video{transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.iz-story:hover video{transform:scale(1.06)}
+.iz-num{-webkit-text-stroke:1.5px rgba(255,193,7,.9);color:transparent}
+.iz-spin{animation:iz-spin 60s linear infinite}
+.iz-spin-r{animation:iz-spin 90s linear infinite reverse}
+@keyframes iz-spin{to{transform:rotate(360deg)}}
+.iz-float{animation:iz-float 6s ease-in-out infinite}
+@keyframes iz-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.iz-glow{animation:iz-glow 4s ease-in-out infinite}
+@keyframes iz-glow{0%,100%{opacity:.55}50%{opacity:1}}
+.iz-ember{position:absolute;bottom:-20px;width:4px;height:4px;border-radius:50%;background:#FFC107;box-shadow:0 0 10px 2px rgba(255,170,0,.8);opacity:0;animation:iz-rise linear infinite}
+@keyframes iz-rise{0%{opacity:0;transform:translate(0,0) scale(1)}10%{opacity:1}100%{opacity:0;transform:translate(var(--dx,20px),-90vh) scale(.4)}}
+.iz-hero-media{position:absolute;inset:0}
+.iz-hero-media video{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.iz-badge{transition:transform .25s,border-color .25s,box-shadow .25s}
+.iz-badge:hover{transform:translateY(-2px);border-color:#FFC107!important;box-shadow:0 10px 30px rgba(0,0,0,.45)}
+.iz-soc:hover{color:#FFC107!important}
+.iz-dc-btn{transition:transform .25s,box-shadow .25s}
+.iz-dc-btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,.25)}
+.iz-marquee{animation:iz-slide 50s linear infinite}
+.iz-marquee:hover{animation-play-state:paused}
+@keyframes iz-slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.iz-mask{-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.iz details summary{list-style:none;cursor:pointer}
+.iz details summary::-webkit-details-marker{display:none}
+.iz details[open] .iz-plus{transform:rotate(45deg)}
+.iz-plus{transition:transform .3s}
+.iz details:hover{border-color:rgba(255,193,7,.5)!important}
+.iz-shine{background:linear-gradient(110deg,#FFC107 0%,#FFE9A8 45%,#FF8A00 100%);background-size:200% 100%;animation:iz-shine 5s ease-in-out infinite}
+@keyframes iz-shine{0%,100%{background-position:0% 0}50%{background-position:100% 0}}
+@media (prefers-reduced-motion:reduce){.iz-spin,.iz-spin-r,.iz-float,.iz-glow,.iz-ember,.iz-marquee,.iz-shine{animation:none!important}}
