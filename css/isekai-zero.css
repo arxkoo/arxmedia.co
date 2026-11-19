@@ -12,6 +12,7 @@
 .iz-play{transition:transform .3s}
 .iz-feat:hover .iz-play{transform:scale(1.1)}
 .iz-yt:hover{background:#E6002E!important}
+@media (max-width:700px){.iz-hero{min-height:640px!important}.iz-hero .iz-hero-media{inset:0!important}.iz-hero .iz-hero-media video{object-position:50% 50%!important}.iz-hero-fade{height:30%!important;background:linear-gradient(180deg,rgba(11,3,51,0) 0%,rgba(11,3,51,.55) 55%,#0B0333 100%)!important}.iz-hero-copy{padding:20px 16px 26px!important;gap:10px!important}.iz-hero-copy h1 img{width:min(66vw,270px)!important}.iz-hero-copy > img{width:min(62vw,250px)!important}.iz-badges{flex-wrap:nowrap!important;gap:7px!important;margin-top:6px!important;width:100%;max-width:400px}.iz-badges .iz-badge{flex:1 1 0;min-width:0!important;height:42px!important;padding:0 8px!important;gap:6px!important;border-radius:9px!important}.iz-badges .iz-badge svg{width:17px;height:17px;flex:none}.iz-badges .iz-badge span span:first-child{font-size:7.5px!important}.iz-badges .iz-badge span span:last-child{font-size:12.5px!important;white-space:nowrap}}
 .iz-card{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s}
 .iz-card:hover{transform:translateY(-6px);border-color:rgba(255,193,7,.7)!important;box-shadow:0 18px 60px rgba(255,138,0,.22),0 0 0 1px rgba(255,193,7,.25) inset}
 .iz-story video{transition:transform .8s cubic-bezier(.2,.7,.2,1)}

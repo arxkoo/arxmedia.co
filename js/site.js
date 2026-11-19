@@ -3,6 +3,15 @@
   'use strict';
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ---------- Mobile menu: close on outside tap / Escape ---------- */
+  var menus = document.querySelectorAll('.arx-menu');
+  document.addEventListener('click', function (e) {
+    menus.forEach(function (m) { if (m.open && !m.contains(e.target)) m.open = false; });
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') menus.forEach(function (m) { if (m.open) { m.open = false; m.querySelector('summary').focus(); } });
+  });
+
   /* ---------- Parallax mousemove (hero sections) ---------- */
   document.querySelectorAll('[data-parallax]').forEach(function (el) {
     var raf = 0;
