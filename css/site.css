@@ -54,6 +54,11 @@ a.arx-row:hover img{transform:scale(1.03)}
 .arx-sol:hover .arx-sol-img img{filter:none;transform:scale(1.05)}
 .arx-iz-box video{transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
 .arx-iz-box:hover video{transform:scale(1.04)}
+.arx-aigame video{transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.arx-aigame:hover video{transform:scale(1.04)}
+.arx-aigame:hover{border-color:#FAFAFA!important}
+@media (max-width:1000px){.arx-sol-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media (max-width:600px){.arx-sol-grid{grid-template-columns:1fr!important}.arx-iz-feats{grid-template-columns:1fr!important}.arx-aigame{min-height:380px!important}}
 .arx-menu{display:none}
 .arx-menu summary{list-style:none}
 .arx-menu summary::-webkit-details-marker{display:none}
